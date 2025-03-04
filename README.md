@@ -68,6 +68,10 @@ Or, if you prefer manually running it:
 ```sh
 npx ts-node src/index.ts
 ```
+Or,
+```sh
+npm start
+```
 
 ## 📂 Project Structure
 ```
