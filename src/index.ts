@@ -1,5 +1,5 @@
 import express, {Express, Request, Response} from 'express';
-import { PORT } from '../secret';
+import { PORT } from './secret';
 import rootRouter from './routes';
 import { PrismaClient } from '@prisma/client';
 import { errorMiddleware } from './middlewares/errors';

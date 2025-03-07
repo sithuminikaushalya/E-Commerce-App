@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { login, signup } from "../controllers/auth";
-import { errorHandler } from "../schema/error-handler";
+import { errorHandler } from "../error-handler";
  
 const authRoutes = Router()
 

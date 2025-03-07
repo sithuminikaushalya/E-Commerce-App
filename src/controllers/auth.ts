@@ -2,7 +2,7 @@ import {NextFunction, Request, Response} from 'express';
 import { prismaClient } from '..';
 import { hashSync, compareSync } from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
-import { JWT_SECRET } from '../../secret';
+import { JWT_SECRET } from '../secret';
 import { BadRequestsException } from '../exceptions/bad-requests';
 import { ErrorCode } from '../exceptions/root';
 import { UnprocessableEntity } from '../exceptions/validation.';
@@ -43,3 +43,6 @@ export const login = async (req: Request ,res: Response) => {
 
     res.json({user, token})
 }
+
+// me -> retrun the logged i user
+
