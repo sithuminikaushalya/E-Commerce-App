@@ -1,10 +1,11 @@
 import { Router } from "express";
 import { login, signup } from "../controllers/auth";
+import { errorHandler } from "../schema/error-handler";
  
 const authRoutes = Router()
 
-authRoutes.post('/signup',signup);
+authRoutes.post('/signup', errorHandler(signup));
 
-authRoutes.post('/login',login);
+authRoutes.post('/login', errorHandler(login));
 
 export default authRoutes;
