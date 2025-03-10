@@ -4,6 +4,7 @@ import { hashSync, compareSync } from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
 import { JWT_SECRET } from '../secret';
 import { BadRequestsException } from '../exceptions/bad-requests';
+import { User } from "@prisma/client";
 import { ErrorCode } from '../exceptions/root';
 import { UnprocessableEntity } from '../exceptions/validation.';
 import { SignUpSchema } from '../schema/users';
@@ -45,4 +46,8 @@ export const login = async (req: Request ,res: Response) => {
 }
 
 // me -> retrun the logged i user
+export const me = async (req:Request, res:Response) => { 
+
+    res.json(req.user)
+}
 
