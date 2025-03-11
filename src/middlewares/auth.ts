@@ -12,7 +12,7 @@ const authMiddleware = async (req: Request, res: Response, next: NextFunction) =
                  
     // 2. if token is not present, throw an error of unauthorized
     if (!token) {
-        return next(new UnauthorizedException('Unauthorized', ErrorCode.UNAUTHORIZED));
+        next(new UnauthorizedException('Unauthorized', ErrorCode.UNAUTHORIZED));
     }
     try {
         // 3. if the token is present, verify that token and extract the payload
@@ -21,7 +21,7 @@ const authMiddleware = async (req: Request, res: Response, next: NextFunction) =
         // 4. to get the user from the payload
         const user = await prismaClient.user.findFirst({where: {id: payload.userId}});
         if (!user) {
-            return next(new UnauthorizedException('Unauthorized', ErrorCode.UNAUTHORIZED));
+            next(new UnauthorizedException('Unauthorized', ErrorCode.UNAUTHORIZED));
         }
 
         // 5. to attach the user to the current request object
