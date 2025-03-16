@@ -31,5 +31,7 @@ export enum ErrorCode {
     UNAUTHORIZED = 4001,
 
     PRODUCT_NOT_FOUND = 5001,
+
+    ORDER_NOT_FOUND = 6001,
 }
 
